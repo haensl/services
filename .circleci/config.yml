@@ -246,11 +246,6 @@ jobs:
           command: |
             npx create-react-app esm-test
       - run:
-          name: install ResizeObserver polyfill
-          working_directory: /tmp/esm-test
-          command: |
-            npm i -S resize-observer-polyfill
-      - run:
           name: install module
           working_directory: /tmp/esm-test
           command: |
@@ -265,6 +260,9 @@ jobs:
           working_directory: /tmp/esm-test
           command: |
             npm test
+      - store_test_results:
+          working_directory: /tmp/esm-test
+          path: test-results
 
   ensure-versioned-correctly:
     docker:
@@ -324,11 +322,6 @@ jobs:
           working_directory: /tmp
           command: |
             npx create-react-app esm-test
-      - run:
-          name: install ResizeObserver polyfill
-          working_directory: /tmp/esm-test
-          command: |
-            npm i -S resize-observer-polyfill
       - run:
           name: install module
           working_directory: /tmp/esm-test
