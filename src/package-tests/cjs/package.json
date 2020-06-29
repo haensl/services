@@ -1,0 +1,34 @@
+{
+  "name": "@haensl/services-cjs-module-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm test",
+    "test": "jest --runInBand --no-cache --reporters='default' --reporters='jest-junit'"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "jest": {
+    "modulePaths": [
+      "<rootDir>"
+    ]
+  },
+  "jest-junit": {
+    "outputDirectory": "test-results/jest",
+    "outputName": "results.xml",
+    "suitName": "@haensl/services cjs module tests"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "babel-jest": "^26.0.1",
+    "jest": "^26.0.1",
+    "jest-junit": "^10.0.0"
+  }
+}
