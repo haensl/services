@@ -37,9 +37,9 @@ describe('cjs module test', () => {
       });
     });
 
-    describe('scrollPositon', () => {
+    describe('scrollPosition', () => {
       it('is a function', () => {
-        expect(typeof services.platform.scrollPositon)
+        expect(typeof services.platform.scrollPosition)
           .toEqual('function');
       });
 
