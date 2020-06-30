@@ -1,6 +1,6 @@
 {
   "name": "@haensl/services",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Assorted JavaScript services.",
   "main": "dist/services.cjs.js",
   "module": "dist/services.esm.js",
@@ -23,7 +23,16 @@
     "JavaScript",
     "service",
     "services",
-    "window"
+    "platform",
+    "window",
+    "hasWindow",
+    "hasDocument",
+    "hasDocumentElement",
+    "hasSessionStorage",
+    "hasLocalStorage",
+    "scrollPosition",
+    "debounce",
+    "throttle"
   ],
   "author": {
     "name": "HP Dietz",

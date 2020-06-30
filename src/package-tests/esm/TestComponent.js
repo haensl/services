@@ -1,7 +1,7 @@
 import React from 'react';
 import services from '@haensl/services';
 
-const App = () => {
+export const TestComponentPlatform = () => {
   const scrollPosition = services.platform.scrollPosition();
 
   if (scrollPosition) {
@@ -15,4 +15,20 @@ const App = () => {
   );
 };
 
-export default App;
+export const TestComponentThrottle = () => {
+  const handler = services.throttle.debounce(
+    () => {
+      console.log('test');
+    },
+    50
+  );
+
+  return (
+    <button onClick={ handler }>test</button>
+  );
+};
+
+export default {
+  TestComponentPlatform,
+  TestComponentThrottle
+};
