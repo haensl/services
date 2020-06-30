@@ -1,3 +1,6 @@
+## 1.1.0
+* [#5: Add throttle service.](https://github.com/haensl/services/issues/5)
+
 ## 1.0.0
 * [#3: Add platform service.](https://github.com/haensl/services/issues/3)
 
