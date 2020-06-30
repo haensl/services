@@ -38,8 +38,9 @@ if (platform.hasWindow) {
 ## Available services
 
 * [platform](#platform): Wraps information about the platform, e.g. _is there a `window`? what is the current scroll position? is there local storage? etc._
+* [throttle](#throttle): Wraps functionality to throttle function execution, e.g. `debounce`.
 
-### platform<a name="platform"></a>
+### platform service<a name="platform"></a>
 
 The platform service wraps information about the current runtime platform, e.g. _is there a `window`? what is the current scroll position? is there local storage? etc._
 
@@ -53,13 +54,13 @@ The platform service wraps information about the current runtime platform, e.g. 
 #### [Methods](#platform-methods)
 * [`scrollPosition()`](#platform.scrollPosition)
 
-### Properties<a name="#platform-properties"></a>
+#### Properties<a name="#platform-properties"></a>
 
-#### hasDocument<a name="platform.hasDocument"></a>
+##### hasDocument<a name="platform.hasDocument"></a>
 
 Boolean, indicating whether or not the current runtime provides a global `document` object.
 
-##### Example
+###### Example
 ```javascript
 import { platform } from '@haensl/services';
 
@@ -72,11 +73,11 @@ if (platform.hasDocument) {
 }
 ```
 
-#### hasDocumentElement<a name="platform.hasDocumentElement"></a>
+##### hasDocumentElement<a name="platform.hasDocumentElement"></a>
 
 Boolean, indicating whether or not the current runtime provides a global `document.documentElement` object.
 
-##### Example
+###### Example
 ```javascript
 import { platform } from '@haensl/services';
 
@@ -89,11 +90,11 @@ if (platform.hasDocumentElement) {
 }
 ```
 
-#### hasLocalStorage<a name="platform.hasLocalStorage"></a>
+##### hasLocalStorage<a name="platform.hasLocalStorage"></a>
 
 Boolean, indicating whether or not the current runtime provides a global `window.localStorage` object.
 
-##### Example
+###### Example
 ```javascript
 import { platform } from '@haensl/services';
 
@@ -106,11 +107,11 @@ if (platform.hasLocalStorage) {
 }
 ```
 
-#### hasSessionStorage<a name="platform.hasSessionStorage"></a>
+##### hasSessionStorage<a name="platform.hasSessionStorage"></a>
 
 Boolean, indicating whether or not the current runtime provides a global `window.sessionStorage` object.
 
-##### Example
+###### Example
 ```javascript
 import { platform } from '@haensl/services';
 
@@ -123,11 +124,11 @@ if (platform.hasSessionStorage) {
 }
 ```
 
-#### hasWindow<a name="platform.hasWindow"></a>
+##### hasWindow<a name="platform.hasWindow"></a>
 
 Boolean, indicating whether or not the current runtime provides a global `window` object.
 
-##### Example
+###### Example
 ```javascript
 import { platform } from '@haensl/services';
 
@@ -138,13 +139,13 @@ if (platform.hasWindow) {
 }
 ```
 
-### Methods<a name="platform-methods"></a>
+#### Methods<a name="platform-methods"></a>
 
-#### scrollPosition()<a name="platform.scrollPosition"></a>
+##### scrollPosition()<a name="platform.scrollPosition"></a>
 
 Returns an object with properties `x` and `y` reflecting the current scroll position if applicaple, `null` otherwise.
 
-##### Example
+###### Example
 ```javascript
 import { platform } from '@haensl/services';
 
@@ -157,6 +158,34 @@ if (platform.hasWindow) {
 } else if (!platform.hasDocument) {
   console.log(platform.scrollPosition());
   // will print null since there is neither document nor window!
+}
+```
+
+### throttle service<a name="throttle"></a>
+
+The throttle service wraps functionality used to throttle function execution, e.g. `debounce`.
+
+##### [Methods](#throttle-methods)
+* [`debounce(fn, debounceMs)`](#throttle.debounce)
+
+#### Methods<a name="throttle-methods">
+
+##### debounce(fn, debounceMs)<a name="throttle.debounce"></a>
+
+Returns a new function that debounces `fn` by `debounceMs` milliseconds. Debouncing means `fn` is only executed if there are _no calls_ for `debounceMs` milliseconds.
+
+###### Example<a name="throttle.debounce.example">
+```javascript
+import { throttle, platform } from '@haensl/services';
+
+if (platform.hasWindow) {
+  // only logs when there are no calls
+  // for 50 milliseconds
+  const onScroll = throttle.debounce(() => {
+    console.log(platform.scrollPosition());
+  }, 50);
+
+  window.addEventListener('scroll', onScroll);
 }
 ```
 

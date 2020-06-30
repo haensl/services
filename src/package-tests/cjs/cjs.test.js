@@ -50,5 +50,20 @@ describe('cjs module test', () => {
       });
     });
   });
+
+  describe('throttle', () => {
+    describe('debounce', () => {
+      it('is a function', () => {
+        expect(typeof services.throttle.debounce)
+          .toEqual('function');
+      });
+
+      it('does not throw', () => {
+        expect(services.throttle.debounce.bind(null, () => {}, 50))
+          .not
+          .toThrow();
+      })
+    });
+  });
 });
 

@@ -23,7 +23,16 @@
     "JavaScript",
     "service",
     "services",
-    "window"
+    "platform",
+    "window",
+    "hasWindow",
+    "hasDocument",
+    "hasDocumentElement",
+    "hasSessionStorage",
+    "hasLocalStorage",
+    "scrollPosition",
+    "debounce",
+    "throttle"
   ],
   "author": {
     "name": "HP Dietz",
