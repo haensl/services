@@ -52,7 +52,7 @@ The component service wraps utility functions useful when working with component
 
 ##### className(states, basename, [separator = `'--'`])<a name="component.className"></a>
 
-Returns a class list string composed of the `basename` followed by the `basename` concatenated with any truthy properties in `states` separated by `separator` _(default: two dashes, `--`)_.
+Returns a class list string composed of the `basename` followed by the `basename` concatenated with any truthy properties in `states`, wherein the concatenation is separated by `separator` _(default: two dashes, `--`)_.
 
 ###### Example
 ```javascript
