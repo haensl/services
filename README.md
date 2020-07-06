@@ -37,8 +37,49 @@ if (platform.hasWindow) {
 
 ## Available services
 
+* [component](#component): Wraps utility functions useful in a component context, e.g. generate stateful class names.
 * [platform](#platform): Wraps information about the platform, e.g. _is there a `window`? what is the current scroll position? is there local storage? etc._
 * [throttle](#throttle): Wraps functionality to throttle function execution, e.g. `debounce`.
+
+### component service<a name="component"></a>
+
+The component service wraps utility functions useful when working with components.
+
+#### [Methods](#component-methods)
+* [`className(states, basename)`](#component.className)
+
+#### Methods<a name="component-methods"></a>
+
+##### className(states, basename, [separator = `'--'`])<a name="component.className"></a>
+
+Returns a class list string composed of the `basename` followed by the `basename` concatenated with any truthy properties in `states`, wherein the concatenation is separated by `separator` _(default: two dashes, `--`)_.
+
+###### Example
+```javascript
+import React, { useState } from 'react';
+import { component } from '@haensl/services';
+
+const MyComponent = () => {
+  const [isDoingStuff, setIsDoingStuff] = useState(false);
+
+  // code manipulating isDoingStuff
+
+  const cn = component.className({
+    isDoingStuff
+  }, 'MyComponent');
+
+  // if isDoingStuff is true
+  // cn === "MyComponent MyComponent--isDoingStuff"
+  // else
+  // cn === "MyComponent"
+
+  return (
+    <div className={ cn }> // className="MyComponent MyComponent--isDoingStuff"
+      // ...
+    </div>
+  );
+};
+```
 
 ### platform service<a name="platform"></a>
 
@@ -174,7 +215,7 @@ The throttle service wraps functionality used to throttle function execution, e.
 
 Returns a new function that debounces `fn` by `debounceMs` milliseconds. Debouncing means `fn` is only executed if there are _no calls_ for `debounceMs` milliseconds.
 
-###### Example<a name="throttle.debounce.example">
+###### Example<a name="throttle.debounce.example"></a>
 ```javascript
 import { throttle, platform } from '@haensl/services';
 

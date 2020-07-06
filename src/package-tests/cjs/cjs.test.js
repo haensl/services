@@ -1,6 +1,15 @@
 const services = require('@haensl/services');
 
 describe('cjs module test', () => {
+  describe('component', () => {
+    describe('className', () => {
+      it('is a function', () => {
+        expect(typeof services.component.className)
+          .toEqual('function');
+      });
+    });
+  });
+
   describe('platform', () => {
     describe('hasDocument', () => {
       it ('is a boolean', () => {

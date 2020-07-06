@@ -28,7 +28,19 @@ export const TestComponentThrottle = () => {
   );
 };
 
+export const TestComponentComponent = () => {
+  const cn = services.component.className({
+    doingStuff: true,
+    notHappening: false
+  }, 'TestComponentComponent', '.');
+
+  return (
+    <div className={ cn }>Test</div>
+  );
+};
+
 export default {
+  TestComponentComponent,
   TestComponentPlatform,
   TestComponentThrottle
 };

@@ -244,7 +244,7 @@ jobs:
           name: create a test react app
           working_directory: /tmp
           command: |
-            npx create-react-app esm-test
+            npx --quiet create-react-app esm-test --use-npm
       - run:
           name: install module
           working_directory: /tmp/esm-test
@@ -321,7 +321,7 @@ jobs:
           name: create a test react app
           working_directory: /tmp
           command: |
-            npx create-react-app esm-test
+            npx --quiet create-react-app esm-test --use-npm
       - run:
           name: install module
           working_directory: /tmp/esm-test
