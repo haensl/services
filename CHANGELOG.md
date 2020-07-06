@@ -1,3 +1,7 @@
+## 1.2.0
+* [#7: Add component service.](https://github.com/haensl/services/issues/7)
+* Update dependencies.
+
 ## 1.1.0
 * [#5: Add throttle service.](https://github.com/haensl/services/issues/5)
 
