@@ -1,3 +1,6 @@
+## 1.2.1
+* [#11: Update dependencies.](https://github.com/haensl/services/issues/11)
+
 ## 1.2.0
 * [#7: Add component service.](https://github.com/haensl/services/issues/7)
 * Update dependencies.
