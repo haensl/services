@@ -7,7 +7,7 @@ export const className = (states, basename, separator = '--') =>
   }`.trim();
 
 export const setInputValue = (input, value) => {
-  Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value')
+  Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value')
     .set
     .call(input, value);
   input.dispatchEvent(new Event('input', { bubbles: true }));
