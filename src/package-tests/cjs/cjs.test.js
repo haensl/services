@@ -8,6 +8,13 @@ describe('cjs module test', () => {
           .toEqual('function');
       });
     });
+
+    describe('setInputValue', () => {
+      it('is a funciton', () => {
+        expect(typeof services.component.setInputValue)
+          .toEqual('function');
+      });
+    });
   });
 
   describe('platform', () => {
