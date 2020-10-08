@@ -1,3 +1,7 @@
+## 1.3.0
+* [#13: Add `setInputValue()` to component service.](https://github.com/haensl/services/issues/13)
+* Update dependencies.
+
 ## 1.2.1
 * [#11: Update dependencies.](https://github.com/haensl/services/issues/11)
 

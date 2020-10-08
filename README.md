@@ -47,6 +47,7 @@ The component service wraps utility functions useful when working with component
 
 #### [Methods](#component-methods)
 * [`className(states, basename)`](#component.className)
+* [`setInputValue(input, value)`](#component.setInputValue)
 
 #### Methods<a name="component-methods"></a>
 
@@ -76,6 +77,44 @@ const MyComponent = () => {
   return (
     <div className={ cn }> // className="MyComponent MyComponent--isDoingStuff"
       // ...
+    </div>
+  );
+};
+```
+
+##### setInputValue(input, value)<a name="component.setInputValue"></a>
+
+Sets the `value` of an [HTMLInputElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement) and triggers an `'input'` event. This is for example useful in cases where frameworks' event management makes it hard to programmatically trigger events that adhere to the native JavaScript event behaviour.
+
+###### Example
+
+```javascript
+import React, { useEffect, useRef, useState } from 'react';
+import { component } from '@haensl/services';
+
+const MyComponent = ({
+  defaultValue = '',
+  onChange
+}) => {
+  const [value, setValue] = useState(defaultValue);
+  const input = useRef();
+
+  useEffect(() => {
+    if (!input.current) {
+      return;
+    }
+
+    component.setInputValue(input.current, defaultValue);
+  }, [defaultValue]);
+
+  return (
+    <div>
+      // ...
+      <input
+        ref={ input }
+        onChange={ onChange }
+        value={ value }
+      />
     </div>
   );
 };

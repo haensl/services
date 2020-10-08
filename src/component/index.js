@@ -6,6 +6,14 @@ export const className = (states, basename, separator = '--') =>
     .join(' ')
   }`.trim();
 
+export const setInputValue = (input, value) => {
+  Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value')
+    .set
+    .call(input, value);
+  input.dispatchEvent(new Event('input', { bubbles: true }));
+};
+
 export default {
-  className
+  className,
+  setInputValue
 };
