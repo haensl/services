@@ -1,6 +1,6 @@
 {
   "name": "@haensl/services",
-  "version": "1.3.8",
+  "version": "1.3.9",
   "description": "Assorted JavaScript services.",
   "main": "dist/services.cjs.js",
   "module": "dist/services.esm.js",
