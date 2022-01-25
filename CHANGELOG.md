@@ -1,3 +1,6 @@
+## 1.3.9
+* [#32: Update dependencies.](https://github.com/haensl/services/issues/32)
+
 ## 1.3.8
 * [#30: Update dependencies.](https://github.com/haensl/services/issues/30)
 
