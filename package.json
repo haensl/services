@@ -1,6 +1,6 @@
 {
   "name": "@haensl/services",
-  "version": "1.3.9",
+  "version": "1.3.10",
   "description": "Assorted JavaScript services.",
   "main": "dist/services.cjs.js",
   "module": "dist/services.esm.js",
@@ -11,10 +11,10 @@
     "coverage": "CI=true npm test -- --ci --coverage",
     "lint": "eslint --ext js,jsx src/",
     "lint:ci": "eslint --format junit -o test-results/eslint/results.xml --ext js,jsx src/",
+    "prepare": "if [ ${NODE_ENV} != 'production' ]; then husky install; fi",
     "tdd": "jest --runInBand --watch",
     "test": "jest --runInBand",
-    "test:ci": "jest --runInBand --no-cache --ci --reporters='default' --reports='jest-junit'",
-    "prepare": "if [ ${NODE_ENV} != 'production' ]; then husky install; fi"
+    "test:ci": "jest --runInBand --no-cache --ci --reporters='default' --reports='jest-junit'"
   },
   "repository": {
     "type": "git",
