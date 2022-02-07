@@ -39,8 +39,17 @@ export const TestComponentComponent = () => {
   );
 };
 
+export const TestComponentNumbers = () => {
+  const n = services.numbers.randInt(0,500);
+
+  return (
+    <span>{ n }</span>
+  );
+};
+
 export default {
   TestComponentComponent,
+  TestComponentNumbers,
   TestComponentPlatform,
   TestComponentThrottle
 };

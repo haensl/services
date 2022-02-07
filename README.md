@@ -38,6 +38,7 @@ if (platform.hasWindow) {
 ## Available services
 
 * [component](#component): Wraps utility functions useful in a component context, e.g. generate stateful class names.
+* [numbers](#numbers): Wraps utility functions pertaining to numbers, e.g. generating random numbers.
 * [platform](#platform): Wraps information about the platform, e.g. _is there a `window`? what is the current scroll position? is there local storage? etc._
 * [throttle](#throttle): Wraps functionality to throttle function execution, e.g. `debounce`.
 
@@ -118,6 +119,43 @@ const MyComponent = ({
     </div>
   );
 };
+```
+
+### numbers service<a name="numbers"></a>
+
+The numbers service wraps utility functions pertaining to numbers, e.g. random number generation.
+
+#### [Methods](#numbers-methods)
+* [`rand({ min, max })`](#numbers.rand)
+* [`randInt({ min, max })`](#numbers.randInt)
+
+#### Methods<a name="numbers-methods"></a>
+
+##### rand({ min = 0, max = 1 })<a name="numbers.rand"></a>
+
+Returns a random floating point number between min (inclusive) and max (exclusive). Due to JavaScript rounding, the value will never equal `max`.
+
+###### Example
+```javascript
+import { numbers } from '@haensl/services';
+
+// generates a random number between 0 (inclusive) and 1 (exclusive)
+const n = numbers.rand();
+
+// generates a random number between 1 (inclusive) and 300 (exclusive)
+const k = numbers.rand({ min: 1, max: 300});
+```
+
+##### randInt({ min, max })<a name="numbers.randInt"></a>
+
+Returns a random integer number between min and max (inclusive).
+
+###### Example
+```javascript
+import { numbers } from '@haensl/services';
+
+// generates a random number between 0 (inclusive) and 3 (inclusive)
+const n = numbers.randInt({ min: 0, max: 3 });
 ```
 
 ### platform service<a name="platform"></a>

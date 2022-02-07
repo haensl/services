@@ -17,6 +17,20 @@ describe('cjs module test', () => {
     });
   });
 
+  describe('numbers', () => {
+    describe('rand', () => {
+      it('is a function', () => {
+        expect(typeof services.numbers.rand)
+          .toEqual('function');
+      });
+    });
+
+    describe('randInt', () => {
+      expect(typeof services.numbers.randInt)
+        .toEqual('function');
+    });
+  });
+
   describe('platform', () => {
     describe('hasDocument', () => {
       it ('is a boolean', () => {
