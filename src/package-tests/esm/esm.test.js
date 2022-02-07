@@ -3,6 +3,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import {
   TestComponentComponent,
+  TestComponentNumbers,
   TestComponentPlatform,
   TestComponentThrottle
 } from './TestComponent';
