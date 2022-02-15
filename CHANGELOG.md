@@ -1,3 +1,6 @@
+## 1.4.1
+* [#44: Update dependencies.](https://github.com/haensl/services/issues/44)
+
 ## 1.4.0
 * [#42: Add numbers service.](https://github.com/haensl/services/issues/42)
 * Update dependencies.
