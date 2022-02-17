@@ -1,6 +1,6 @@
 {
   "name": "@haensl/services",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Assorted JavaScript services.",
   "main": "dist/services.cjs.js",
   "module": "dist/services.esm.js",
@@ -47,6 +47,7 @@
     "twitter": "@h_p_d",
     "email": "h.p.dietz@gmail.com"
   },
+  "funding": "https://github.com/sponsors/haensl",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/haensl/services/issues"
