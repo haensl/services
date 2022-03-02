@@ -1,3 +1,6 @@
+## 1.4.3
+* [#48: Update dependencies.](https://github.com/haensl/services/issues/48)
+
 ## 1.4.2
 * [#46: Add funding information.](https://github.com/haensl/services/issues/46)
 * Update dependencies.
