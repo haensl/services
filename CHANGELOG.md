@@ -1,3 +1,6 @@
+## 1.4.7
+* [#62: Update dependencies.](https://github.com/haensl/services/issues/62)
+
 ## 1.4.6
 * [#60: Update dependencies.](https://github.com/haensl/services/issues/60)
 
