@@ -17,7 +17,7 @@ describe('cjs module test', () => {
     });
   });
 
-  describe('error', ()= => {
+  describe('error', () => {
     describe('attachResponseToError', () => {
       it('is a function', () => {
         expect(typeof services.error.attachResponseToError)
