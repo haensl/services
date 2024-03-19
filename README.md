@@ -38,6 +38,7 @@ if (platform.hasWindow) {
 ## Available services
 
 * [component](#component): Wraps utility functions useful in a component context, e.g. generate stateful class names.
+* [error](#error): Wraps utility functions pertaining to `Error`s.
 * [numbers](#numbers): Wraps utility functions pertaining to numbers, e.g. generating random numbers.
 * [platform](#platform): Wraps information about the platform, e.g. _is there a `window`? what is the current scroll position? is there local storage? etc._
 * [throttle](#throttle): Wraps functionality to throttle function execution, e.g. `debounce`.
@@ -119,6 +120,37 @@ const MyComponent = ({
     </div>
   );
 };
+```
+
+### error service<a name="error">></a>
+
+The error service wraps utility functions pertaining to `Error`s.
+
+#### [Methods](#error-methods)
+
+* [`attachResponseToError(response, error)`](#error.attachResponseToError)
+
+#### Methods<a name="error-methods"></a>
+
+##### async attachResponseToError(response, error)<a name="error.attachResponseToError"></a>
+
+Attaches HTTP [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) meta data to an `Error`. This is an `async` operation.
+
+
+###### Example
+
+```javascript
+
+const response = await fetch('/some/api');
+
+if (!response.ok) {
+    const error = new Error('Failing to fetch from API!');
+
+    // extract metadata such as headers, status, etc from response and attach to error object.
+    await attach(response, error);
+
+    throw error;
+}
 ```
 
 ### numbers service<a name="numbers"></a>

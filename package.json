@@ -1,6 +1,6 @@
 {
   "name": "@haensl/services",
-  "version": "1.4.9",
+  "version": "1.5.0",
   "description": "Assorted JavaScript services.",
   "main": "dist/services.cjs.js",
   "module": "dist/services.esm.js",
@@ -27,6 +27,8 @@
     "component",
     "classname",
     "class",
+    "error",
+    "response",
     "platform",
     "window",
     "hasWindow",
@@ -126,6 +128,8 @@
     "@babel/core": "^7.12.13",
     "@babel/preset-env": "^7.12.13",
     "@haensl/eslint-config": "^1.4.1",
+    "@haensl/http": "^1.1.1",
+    "@haensl/mimetypes": "^1.1.0",
     "@haensl/rollup-plugin-local-resolve": "^1.1.1",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^25.0.0",
@@ -139,6 +143,7 @@
     "jest-environment-jsdom": "^29.3.1",
     "jest-junit": "^16.0.0",
     "jest-watch-typeahead": "^2.2.1",
+    "node-fetch": "^2.7.0",
     "rimraf": "^5.0.0",
     "rollup": "^4.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4"

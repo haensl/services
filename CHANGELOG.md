@@ -1,3 +1,7 @@
+## 1.5.0
+* [#68: Add `error` service.](https://github.com/haensl/services/issues/68)
+* Update dependencies.
+
 ## 1.4.9
 * [#66: Update dependencies.](https://github.com/haensl/services/issues/66)
 

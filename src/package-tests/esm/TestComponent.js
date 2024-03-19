@@ -47,8 +47,19 @@ export const TestComponentNumbers = () => {
   );
 };
 
+export const TestComponentError = () => {
+  if (typeof services.error.attachResponseToError !== 'function') {
+    throw new Error(`error service missing function attachResponseToError!${typeof services.error.attachResponseToError}`);
+  }
+
+  return (
+    <span>test</span>
+  );
+};
+
 export default {
   TestComponentComponent,
+  TestComponentError,
   TestComponentNumbers,
   TestComponentPlatform,
   TestComponentThrottle

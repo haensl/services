@@ -17,6 +17,15 @@ describe('cjs module test', () => {
     });
   });
 
+  describe('error', () => {
+    describe('attachResponseToError', () => {
+      it('is a function', () => {
+        expect(typeof services.error.attachResponseToError)
+          .toEqual('function');
+      });
+    });
+  });
+
   describe('numbers', () => {
     describe('rand', () => {
       it('is a function', () => {

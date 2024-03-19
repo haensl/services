@@ -3,6 +3,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import {
   TestComponentComponent,
+  TestComponentError,
   TestComponentNumbers,
   TestComponentPlatform,
   TestComponentThrottle
@@ -13,6 +14,14 @@ describe('esm module test', () => {
   describe('component', () => {
     it('renders without crashing', () => {
       expect(render.bind(render, <TestComponentComponent />))
+        .not
+        .toThrow();
+    });
+  });
+
+  describe('error', () => {
+    it('renders without crashing', () => {
+      expect(render.bind(render, <TestComponentError />))
         .not
         .toThrow();
     });
