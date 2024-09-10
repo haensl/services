@@ -1,6 +1,6 @@
 export const hasWindow = (() => {
   try {
-    return typeof window === 'object';
+    return typeof window === 'object' && window !== null;
   } catch(err) {
     return false;
   }
@@ -8,20 +8,27 @@ export const hasWindow = (() => {
 
 export const hasDocument = (() => {
   try {
-    return typeof document === 'object';
+    return typeof document === 'object' && document !== null;
   } catch(err) {
     return false;
   }
 })();
 
 export const hasDocumentElement = hasDocument
-  && typeof document.documentElement === 'object';
+  && typeof document.documentElement === 'object'
+  && document.documentElement !== null;
 
 export const hasSessionStorage = hasWindow
-  && typeof window.sessionStorage === 'object';
+  && typeof window.sessionStorage === 'object'
+  && window.sessionStorage !== null
+  && typeof window.sessionStorage.setItem === 'function'
+  && typeof window.sessionStorage.getItem === 'function';
 
 export const hasLocalStorage = hasWindow
-  && typeof window.localStorage === 'object';
+  && typeof window.localStorage === 'object'
+  && window.localStorage !== null
+  && typeof window.localStorage.setItem === 'function'
+  && typeof window.localStorage.getItem === 'function';
 
 export const scrollPosition = () => {
   if (hasWindow
