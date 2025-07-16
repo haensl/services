@@ -42,7 +42,7 @@ describe('cjs module test', () => {
 
   describe('platform', () => {
     describe('hasDocument', () => {
-      it ('is a boolean', () => {
+      it('is a boolean', () => {
         expect(typeof services.platform.hasDocument)
           .toEqual('boolean');
       });
@@ -98,10 +98,10 @@ describe('cjs module test', () => {
       });
 
       it('does not throw', () => {
-        expect(services.throttle.debounce.bind(null, () => {}, 50))
+        expect(services.throttle.debounce.bind(null, () => { /** */ }, 50))
           .not
           .toThrow();
-      })
+      });
     });
   });
 });

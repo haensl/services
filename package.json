@@ -1,6 +1,6 @@
 {
   "name": "@haensl/services",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "Assorted JavaScript services.",
   "main": "dist/services.cjs.js",
   "module": "dist/services.esm.js",
@@ -9,8 +9,8 @@
     "build": "npm run clean && NODE_ENV=production rollup -c",
     "clean": "rimraf ./dist",
     "coverage": "CI=true npm test -- --ci --coverage",
-    "lint": "eslint --ext js,jsx src/",
-    "lint:ci": "eslint --format junit -o test-results/eslint/results.xml --ext js,jsx src/",
+    "lint": "ESLINT_USE_FLAT_CONFIG=true eslint 'src/**/*.js'",
+    "lint:ci": "ESLINT_USE_FLAT_CONFIG=true eslint --format junit -o test-results/eslint/results.xml 'src/**/*.js'",
     "prepare": "if [ ${NODE_ENV} != 'production' ]; then husky; fi",
     "tdd": "jest --runInBand --watch",
     "test": "jest --runInBand",
@@ -46,7 +46,6 @@
   "author": {
     "name": "HP Dietz",
     "url": "https://hpdietz.com",
-    "twitter": "@h_p_d",
     "email": "h.p.dietz@gmail.com"
   },
   "funding": "https://github.com/sponsors/haensl",
@@ -71,10 +70,6 @@
       "<rootDir>/package.json",
       "<rootDir>/package-lock.json"
     ],
-    "watchPlugins": [
-      "jest-watch-typeahead/filename",
-      "jest-watch-typeahead/testname"
-    ],
     "coverageReporters": [
       "text"
     ],
@@ -97,26 +92,11 @@
   "jest-junit": {
     "outputDirectory": "test-results/jest",
     "outputName": "results.xml",
-    "suitName": "react hooks unit tests"
+    "suitName": "@haensl/services unit tests"
   },
   "babel": {
     "presets": [
       "@babel/env"
-    ]
-  },
-  "eslintConfig": {
-    "parserOptions": {
-      "ecmaVersion": 9,
-      "sourceType": "module"
-    },
-    "env": {
-      "browser": true,
-      "es6": true,
-      "commonjs": true,
-      "jest": true
-    },
-    "extends": [
-      "@haensl"
     ]
   },
   "husky": {
@@ -127,24 +107,26 @@
   "devDependencies": {
     "@babel/core": "^7.12.13",
     "@babel/preset-env": "^7.12.13",
-    "@haensl/eslint-config": "^1.4.1",
+    "@haensl/eslint-config": "^2.0.0",
     "@haensl/http": "^1.1.1",
     "@haensl/mimetypes": "^1.1.0",
     "@haensl/rollup-plugin-local-resolve": "^1.1.1",
     "@rollup/plugin-babel": "^6.0.3",
-    "@rollup/plugin-commonjs": "^25.0.0",
-    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-terser": "^0.4.2",
     "babel-eslint": "^10.1.0",
-    "babel-jest": "^29.3.1",
-    "eslint": "^8.5.0",
+    "babel-jest": "^30.0.4",
+    "eslint": "^9.31.0",
+    "eslint-formatter-junit": "^8.40.0",
+    "eslint-plugin-react": "^7.37.5",
     "husky": "^9.0.11",
-    "jest": "^29.3.1",
-    "jest-environment-jsdom": "^29.3.1",
+    "jest": "^30.0.4",
+    "jest-environment-jsdom": "^30.0.4",
+    "jest-environment-node": "^30.0.4",
     "jest-junit": "^16.0.0",
-    "jest-watch-typeahead": "^2.2.1",
     "node-fetch": "^2.7.0",
-    "rimraf": "^5.0.0",
+    "rimraf": "^6.0.1",
     "rollup": "^4.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4"
   }

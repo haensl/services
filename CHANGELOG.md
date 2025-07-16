@@ -1,3 +1,6 @@
+## 1.5.3
+* [#74: Update dependencies.](https://github.com/haensl/services/issues/74)
+
 ## 1.5.2
 * [#72: Handle `null` in platform service.](https://github.com/haensl/services/issues/72)
 * Update dependencies.
