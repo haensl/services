@@ -70,10 +70,6 @@
       "<rootDir>/package.json",
       "<rootDir>/package-lock.json"
     ],
-    "watchPlugins": [
-      "jest-watch-typeahead/filename",
-      "jest-watch-typeahead/testname"
-    ],
     "coverageReporters": [
       "text"
     ],
@@ -96,26 +92,11 @@
   "jest-junit": {
     "outputDirectory": "test-results/jest",
     "outputName": "results.xml",
-    "suitName": "react hooks unit tests"
+    "suitName": "@haensl/services unit tests"
   },
   "babel": {
     "presets": [
       "@babel/env"
-    ]
-  },
-  "eslintConfig": {
-    "parserOptions": {
-      "ecmaVersion": 9,
-      "sourceType": "module"
-    },
-    "env": {
-      "browser": true,
-      "es6": true,
-      "commonjs": true,
-      "jest": true
-    },
-    "extends": [
-      "@haensl"
     ]
   },
   "husky": {
@@ -135,14 +116,14 @@
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-terser": "^0.4.2",
     "babel-eslint": "^10.1.0",
-    "babel-jest": "^29.3.1",
+    "babel-jest": "^30.0.4",
     "eslint": "^9.31.0",
     "eslint-plugin-react": "^7.37.5",
     "husky": "^9.0.11",
-    "jest": "^29.3.1",
-    "jest-environment-jsdom": "^29.3.1",
+    "jest": "^30.0.4",
+    "jest-environment-jsdom": "^30.0.4",
+    "jest-environment-node": "^30.0.4",
     "jest-junit": "^16.0.0",
-    "jest-watch-typeahead": "^2.2.1",
     "node-fetch": "^2.7.0",
     "rimraf": "^5.0.0",
     "rollup": "^4.4.0",
