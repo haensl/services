@@ -1,7 +1,7 @@
 export const hasWindow = (() => {
   try {
     return typeof window === 'object' && window !== null;
-  } catch(err) {
+  } catch {
     return false;
   }
 })();
@@ -9,7 +9,7 @@ export const hasWindow = (() => {
 export const hasDocument = (() => {
   try {
     return typeof document === 'object' && document !== null;
-  } catch(err) {
+  } catch {
     return false;
   }
 })();
